@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ANNADISHA Design System - Traditional Indian Snacks Brand */
+
+@layer base {
+  :root {
+    /* Core brand colors - Forest Green & Warm Earthy Tones */
+    --background: 40 30% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Rich Forest Green (Purity & Freshness) */
+    --primary: 142 45% 28%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Warm Golden (Ghee, Tradition) */
+    --secondary: 38 70% 55%;
+    --secondary-foreground: 25 30% 15%;
+
+    /* Muted - Soft Cream */
+    --muted: 40 20% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Terracotta (Bihar Culture) */
+    --accent: 18 55% 50%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 142 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom brand tokens */
+    --cream: 40 30% 95%;
+    --cream-dark: 40 25% 90%;
+    --forest: 142 45% 28%;
+    --forest-light: 142 35% 40%;
+    --forest-dark: 142 50% 20%;
+    --golden: 38 70% 55%;
+    --golden-light: 38 65% 70%;
+    --golden-dark: 38 75% 42%;
+    --terracotta: 18 55% 50%;
+    --terracotta-light: 18 45% 65%;
+    --brown: 25 30% 25%;
+    --brown-light: 25 20% 40%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 28%) 0%, hsl(142 50% 20%) 100%);
+    --gradient-golden: linear-gradient(135deg, hsl(38 70% 55%) 0%, hsl(38 75% 42%) 100%);
+    --gradient-cream: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(40 25% 92%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 15% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(25 30% 15% / 0.12);
+    --shadow-elevated: 0 20px 50px -12px hsl(25 30% 15% / 0.2);
+
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient-forest {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .text-gradient-golden {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-golden);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .bg-gradient-cream {
+    background: var(--gradient-cream);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Cultural pattern overlay */
+  .pattern-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Decorative border pattern */
+  .border-pattern {
+    border-image: repeating-linear-gradient(
+      90deg,
+      hsl(var(--golden)) 0px,
+      hsl(var(--golden)) 8px,
+      transparent 8px,
+      transparent 16px
+    ) 1;
+  }
+}
